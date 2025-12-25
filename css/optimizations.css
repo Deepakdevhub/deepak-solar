@@ -1,0 +1,42 @@
+/* Performance optimizations for smooth scrolling */
+
+/* Use GPU acceleration for transforms */
+.portfolio-card,
+.benefit-card,
+.product-card,
+.btn,
+.modal-content {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Optimize images for performance */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Smooth transitions for interactive elements */
+a,
+button,
+.btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Optimize scroll containers */
+.modal-content,
+.dropdown-content {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Remove layout shifts */
+* {
+    box-sizing: border-box;
+}
+
+/* Optimize repaints */
+.card-overlay,
+.hero-gradient {
+    contain: layout style paint;
+}

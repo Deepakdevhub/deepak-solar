@@ -1,0 +1,270 @@
+/* ========================================
+   CALCULATOR MODAL STYLES
+======================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    max-width: 550px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: var(--gray-100);
+    border: none;
+    border-radius: var(--radius-full);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--gray-600);
+}
+
+.modal-close:hover {
+    background: var(--gray-200);
+    color: var(--gray-900);
+}
+
+.modal-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.modal-content h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+    color: var(--gray-900);
+}
+
+.modal-subtitle {
+    color: var(--gray-600);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+}
+
+.system-selector {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.system-type-tabs {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.system-tab {
+    flex: 1;
+    min-width: 120px;
+    padding: var(--space-4);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    background: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    transition: all 0.2s ease;
+    font-weight: var(--weight-medium);
+}
+
+.system-tab:hover {
+    border-color: var(--sun-gold);
+}
+
+.system-tab.active {
+    border-color: var(--sun-gold);
+    background: var(--sky-warm);
+}
+
+.system-tab svg {
+    width: 24px;
+    height: 24px;
+}
+
+.kw-selector label {
+    display: block;
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-3);
+    color: var(--gray-700);
+}
+
+.kw-options {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.kw-btn {
+    padding: var(--space-3) var(--space-5);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    background: white;
+    cursor: pointer;
+    font-weight: var(--weight-medium);
+    transition: all 0.2s ease;
+}
+
+.kw-btn:hover {
+    border-color: var(--sun-gold);
+}
+
+.kw-btn.active {
+    border-color: var(--sun-gold);
+    background: var(--gradient-solar);
+    color: white;
+}
+
+.calc-result {
+    background: var(--gray-50);
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+}
+
+.calc-result h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+    color: var(--gray-900);
+}
+
+.result-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3);
+    background: white;
+    border-radius: var(--radius-lg);
+}
+
+.breakdown-row.subsidy {
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.breakdown-row.total {
+    background: var(--gradient-solar);
+    color: white;
+    padding: var(--space-4);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+}
+
+.breakdown-row .value {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+}
+
+.breakdown-row .value.highlight {
+    font-size: var(--text-2xl);
+}
+
+.system-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: white;
+    border-radius: var(--radius-lg);
+}
+
+.spec-item svg {
+    width: 24px;
+    height: 24px;
+    color: var(--sun-amber);
+    flex-shrink: 0;
+}
+
+.spec-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-item strong {
+    font-size: var(--text-lg);
+    color: var(--sun-deep);
+}
+
+.spec-item small {
+    font-size: var(--text-xs);
+    color: var(--gray-600);
+}
+
+.calc-result .btn {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        padding: var(--space-6);
+    }
+
+    .system-type-tabs {
+        flex-direction: column;
+    }
+
+    .system-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .kw-options {
+        justify-content: space-between;
+    }
+
+    .kw-btn {
+        flex: 1;
+    }
+}
+
+/* End of modal styles */

@@ -1,0 +1,14 @@
+{
+  "name": "deepak-solar",
+  "version": "1.0.0",
+  "description": "Premium Solar Energy Website for Deepak Solar, Ratangarh",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
