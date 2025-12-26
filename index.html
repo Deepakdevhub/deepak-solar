@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="vZIWTvywejT27LwbIKX9Igtbg5N3Jm3Tu72ZKY8vxzk" />
+    <meta name="google-site-verification" content="vZIWTvywejT27LwbIKX9Igtbg5N3Jm3Tu72ZKY8vxzk" />
     <!-- Primary Meta Tags -->
     <title>Deepak Solar - Best Solar Panel Installation in Churu, Bikaner, Sikar | PM Surya Ghar Subsidy | दीपक सोलर
         राजस्थान</title>
@@ -53,15 +53,27 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
-    <!-- Styles -->
+    <!-- Critical Styles (render-blocking - needed for initial paint) -->
     <link rel="stylesheet" href="/css/variables.css">
     <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/optimizations.css">
-    <link rel="stylesheet" href="/css/components.css">
-    <link rel="stylesheet" href="/css/sections.css">
-    <link rel="stylesheet" href="/css/animations.css">
-    <link rel="stylesheet" href="/css/modal.css">
-    <link rel="stylesheet" href="/css/products.css">
+
+    <!-- Non-critical Styles (deferred - load async without blocking render) -->
+    <link rel="stylesheet" href="/css/optimizations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/components.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/sections.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/modal.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/products.css" media="print" onload="this.media='all'">
+
+    <!-- Fallback for users with JS disabled -->
+    <noscript>
+        <link rel="stylesheet" href="/css/optimizations.css">
+        <link rel="stylesheet" href="/css/components.css">
+        <link rel="stylesheet" href="/css/sections.css">
+        <link rel="stylesheet" href="/css/animations.css">
+        <link rel="stylesheet" href="/css/modal.css">
+        <link rel="stylesheet" href="/css/products.css">
+    </noscript>
 </head>
 
 <body>
