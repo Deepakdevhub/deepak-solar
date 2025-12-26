@@ -49,9 +49,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
-    <!-- Leaflet for map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
@@ -175,19 +172,19 @@
                     <h2 class="section-title">सूरज: राजस्थान की असली <span class="highlight">दौलत</span></h2>
                     <p class="section-subtitle">
                         जहाँ भगवान ने पानी कम दिया, वहाँ सूरज की रोशनी भरपूर दी।
-                        इस रोशनी को बिजली में बदलें और कोयले के प्रदूषण से मुक्ति पाएं।
+                        इस रोशनी को बिजली में बदलें और हर महीने ₹0 बिल पाएं।
                     </p>
                 </div>
 
                 <div class="comparison-grid">
                     <div class="comparison-card before">
                         <div class="card-icon danger">
-                            <i data-lucide="cloud-lightning"></i>
+                            <i data-lucide="plug-zap"></i>
                         </div>
-                        <h3>कोयले की बिजली</h3>
+                        <h3>बिना सोलर के</h3>
                         <ul class="card-list">
                             <li><i data-lucide="x"></i> हर महीने ₹2,000-5,000 बिल</li>
-                            <li><i data-lucide="x"></i> प्रदूषण और बीमारियाँ</li>
+                            <li><i data-lucide="x"></i> बढ़ती बिजली दरें</li>
                             <li><i data-lucide="x"></i> बिजली कटौती की समस्या</li>
                             <li><i data-lucide="x"></i> AC चलाने का डर</li>
                         </ul>
@@ -368,8 +365,7 @@
                 <div class="partners-marquee">
                     <div class="marquee-track">
                         <div class="partner-logo">
-                            <img src="https://www.waaree.com/images/logo.svg" alt="Waaree"
-                                onerror="this.parentElement.innerHTML='<span>WAAREE</span>'">
+                            <span>WAAREE</span>
                         </div>
                         <div class="partner-logo">
                             <span>TATA SOLAR</span>
@@ -406,6 +402,46 @@
                             <span>LUMINOUS</span>
                         </div>
                     </div>
+                    <!-- Second track - reverse direction -->
+                    <div class="marquee-track reverse">
+                        <div class="partner-logo">
+                            <span>HAVELLS</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>LIVGUARD</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>MICROTEK</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>VIKRAM SOLAR</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>LUMINOUS</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>ADANI SOLAR</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>TATA SOLAR</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>WAAREE</span>
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="partner-logo">
+                            <span>HAVELLS</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>LIVGUARD</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>MICROTEK</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>VIKRAM SOLAR</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -424,6 +460,10 @@
                 <div class="tech-comparison">
                     <div class="tech-card old">
                         <div class="tech-badge danger">पुरानी टेक्नोलॉजी</div>
+                        <div class="tech-image-inline">
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=150&fit=crop&q=80"
+                                alt="Polycrystalline Panel" loading="lazy">
+                        </div>
                         <i data-lucide="x-circle"></i>
                         <h3>Polycrystalline</h3>
                         <ul>
@@ -438,6 +478,10 @@
                     </div>
                     <div class="tech-card new featured">
                         <div class="tech-badge success">हम देते हैं</div>
+                        <div class="tech-image-inline">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=150&fit=crop&q=80"
+                                alt="Mono PERC Panel" loading="lazy">
+                        </div>
                         <i data-lucide="check-circle"></i>
                         <h3>TOPCon Bifacial Mono PERC</h3>
                         <ul>
@@ -450,34 +494,7 @@
                     </div>
                 </div>
 
-                <div class="tech-images">
-                    <div class="tech-image-card">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=400&fit=crop"
-                            alt="Modern Solar Panels" onerror="this.src='data:image/svg+xml,...'">
-                        <div class="image-caption">
-                            <h4>N-Type TOPCon Technology</h4>
-                            <p>22%+ efficiency with better temperature coefficient</p>
-                        </div>
-                    </div>
-                    <div class="tech-image-card">
-                        <img src="https://images.unsplash.com/photo-1509389928833-fe62aef36deb?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Bifacial Solar Panels" onerror="this.src='data:image/svg+xml,...'">
-                        <div class="image-caption">
-                            <h4>Bifacial Panels</h4>
-                            <p>Generate power from both sides - up to 30% extra</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="tech-brands">
-                    <p>Available from top brands:</p>
-                    <div class="brand-list">
-                        <span>Waaree</span>
-                        <span>Adani Solar</span>
-                        <span>Tata Power</span>
-                        <span>Vikram Solar</span>
-                    </div>
-                </div>
             </div>
         </section>
 

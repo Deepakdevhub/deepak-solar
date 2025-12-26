@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initPortfolioTabs();
     initAnimations();
     initForm();
-    initMap();
     initCalculator();
     initLocationCascade();
 });
@@ -197,40 +196,7 @@ function initPortfolioTabs() {
     });
 }
 
-/* === MAP === */
-function initMap() {
-    const mapContainer = document.getElementById('map');
-    if (!mapContainer || typeof L === 'undefined') return;
 
-    // Ratangarh coordinates
-    const lat = 28.1179;
-    const lng = 74.6194;
-
-    const map = L.map('map', {
-        scrollWheelZoom: false,
-        dragging: !L.Browser.mobile
-    }).setView([lat, lng], 14);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-
-    // Custom marker
-    const sunIcon = L.divIcon({
-        html: '<div style="background: linear-gradient(135deg, #F59E0B, #B45309); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);">☀️</div>',
-        iconSize: [40, 40],
-        className: ''
-    });
-
-    L.marker([lat, lng], { icon: sunIcon })
-        .addTo(map)
-        .bindPopup(`
-            <strong>दीपक सोलर</strong><br>
-            Link Road, Near Bus Stand<br>
-            Ratangarh, Churu<br>
-            <a href="https://maps.google.com/?q=${lat},${lng}" target="_blank">Get Directions</a>
-        `);
-}
 
 /* === SUN ORB EFFECT === */
 function initSunOrb() {

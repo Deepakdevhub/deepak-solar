@@ -2,6 +2,7 @@
 
 const solarData = {
     home: {
+        // PM Surya Ghar: Central subsidy + State subsidy (for eligible beneficiaries)
         1: { cost: 67000, centralSub: 30000, stateSub: 17000, daily: 5, area: 100, weight: 50 },
         2: { cost: 112000, centralSub: 60000, stateSub: 17000, daily: 10, area: 180, weight: 100 },
         3: { cost: 160000, centralSub: 78000, stateSub: 17000, daily: 15, area: 250, weight: 150 },
@@ -9,18 +10,21 @@ const solarData = {
         10: { cost: 400000, centralSub: 78000, stateSub: 0, daily: 50, area: 900, weight: 500 }
     },
     shop: {
-        1: { cost: 67000, centralSub: 30000, stateSub: 0, daily: 5, area: 100, weight: 50 },
-        2: { cost: 112000, centralSub: 60000, stateSub: 0, daily: 10, area: 180, weight: 100 },
-        3: { cost: 160000, centralSub: 78000, stateSub: 0, daily: 15, area: 250, weight: 150 },
-        5: { cost: 205000, centralSub: 78000, stateSub: 0, daily: 25, area: 450, weight: 250 },
-        10: { cost: 400000, centralSub: 78000, stateSub: 0, daily: 50, area: 900, weight: 500 }
+        // Commercial - NO PM Surya Ghar subsidy (residential only)
+        // Benefits: Accelerated depreciation, tax benefits
+        1: { cost: 67000, centralSub: 0, stateSub: 0, daily: 5, area: 100, weight: 50 },
+        2: { cost: 112000, centralSub: 0, stateSub: 0, daily: 10, area: 180, weight: 100 },
+        3: { cost: 160000, centralSub: 0, stateSub: 0, daily: 15, area: 250, weight: 150 },
+        5: { cost: 205000, centralSub: 0, stateSub: 0, daily: 25, area: 450, weight: 250 },
+        10: { cost: 400000, centralSub: 0, stateSub: 0, daily: 50, area: 900, weight: 500 }
     },
     farm: {
-        1: { cost: 75000, centralSub: 37500, stateSub: 22500, daily: 5, area: 100, weight: 60 },
-        2: { cost: 130000, centralSub: 65000, stateSub: 39000, daily: 10, area: 180, weight: 120 },
-        3: { cost: 185000, centralSub: 92500, stateSub: 55500, daily: 15, area: 250, weight: 180 },
-        5: { cost: 280000, centralSub: 140000, stateSub: 84000, daily: 25, area: 450, weight: 300 },
-        10: { cost: 520000, centralSub: 260000, stateSub: 156000, daily: 50, area: 900, weight: 600 }
+        // PM KUSUM: 30% central + 30% state = 60% subsidy, farmer pays 10%
+        1: { cost: 75000, centralSub: 22500, stateSub: 22500, daily: 5, area: 100, weight: 60 },
+        2: { cost: 130000, centralSub: 39000, stateSub: 39000, daily: 10, area: 180, weight: 120 },
+        3: { cost: 185000, centralSub: 55500, stateSub: 55500, daily: 15, area: 250, weight: 180 },
+        5: { cost: 280000, centralSub: 84000, stateSub: 84000, daily: 25, area: 450, weight: 300 },
+        10: { cost: 520000, centralSub: 156000, stateSub: 156000, daily: 50, area: 900, weight: 600 }
     }
 };
 

@@ -1,0 +1,24 @@
+# Deepak Solar - Robots.txt
+# Allow all search engines to crawl all content
+
+User-agent: *
+Allow: /
+
+# Sitemap (update with actual domain when deployed)
+Sitemap: https://deepaksolar.in/sitemap.xml
+
+# Allow important bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Block certain paths (none currently)
+# Disallow: /private/
+
+# Crawl delay (optional, remove if causing issues)
+# Crawl-delay: 1
