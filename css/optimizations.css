@@ -1,33 +1,35 @@
 /* Performance optimizations for smooth scrolling */
 
-/* Use GPU acceleration for transforms */
-.portfolio-card,
-.benefit-card,
-.product-card,
-.btn,
+/* Use GPU acceleration ONLY for actively animated elements */
 .modal-content {
     transform: translateZ(0);
-    will-change: transform;
     backface-visibility: hidden;
+}
+
+/* Removed will-change from static elements - causes memory overhead */
+/* Apply will-change only on hover/interaction */
+.portfolio-card:hover,
+.benefit-card:hover,
+.product-card:hover,
+.btn:hover {
+    will-change: transform;
 }
 
 /* Optimize images for performance */
 img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    content-visibility: auto;
 }
 
-/* Smooth transitions for interactive elements */
-a,
-button,
+/* Optimize transitions - use transform only, avoid "all" */
 .btn {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 /* Optimize scroll containers */
 .modal-content,
 .dropdown-content {
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 /* Remove layout shifts */
@@ -35,8 +37,28 @@ button,
     box-sizing: border-box;
 }
 
-/* Optimize repaints */
+/* Optimize repaints - use CSS containment */
 .card-overlay,
-.hero-gradient {
+.hero-gradient,
+.portfolio-card,
+.fact-card,
+.benefit-card {
     contain: layout style paint;
+}
+
+/* Reduce paint areas for marquee */
+.partners-marquee {
+    contain: layout style;
+    overflow: hidden;
+}
+
+/* Optimize fixed elements */
+.navbar {
+    contain: layout style;
+}
+
+/* Lazy render offscreen content */
+.section:not(:first-child) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
 }

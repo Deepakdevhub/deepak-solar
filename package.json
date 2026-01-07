@@ -1,7 +1,7 @@
 {
-  "name": "deepak-solar",
+  "name": "sitren-solar",
   "version": "1.0.0",
-  "description": "Premium Solar Energy Website for Deepak Solar, Ratangarh",
+  "description": "Premium Solar Energy Website for Sitren Solar, Rajasthan",
   "type": "module",
   "scripts": {
     "dev": "vite",

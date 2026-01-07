@@ -1,5 +1,5 @@
 /* ========================================
-   DEEPAK SOLAR - Main JavaScript
+   SITREN SOLAR - Main JavaScript
    Initialization & Core Functionality
 ======================================== */
 
@@ -32,22 +32,23 @@ function initPreloader() {
     const preloader = document.getElementById('preloader');
 
     window.addEventListener('load', () => {
+        // Reduced delay for faster perceived load
         setTimeout(() => {
             preloader.classList.add('hidden');
             document.body.classList.remove('loading');
 
             // Trigger hero animations after preloader
             triggerHeroAnimations();
-        }, 800);
+        }, 300);
     });
 
-    // Fallback - hide preloader after 3 seconds max
+    // Fallback - hide preloader after 1.5 seconds max
     setTimeout(() => {
         if (!preloader.classList.contains('hidden')) {
             preloader.classList.add('hidden');
             document.body.classList.remove('loading');
         }
-    }, 3000);
+    }, 1500);
 }
 
 /* === HERO ANIMATIONS === */

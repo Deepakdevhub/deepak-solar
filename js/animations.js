@@ -49,15 +49,23 @@ export function initAnimations() {
 /* === PARALLAX SCROLL EFFECT === */
 export function initParallax() {
     const parallaxElements = document.querySelectorAll('[data-parallax]');
+    if (!parallaxElements.length) return;
+
+    let ticking = false;
 
     window.addEventListener('scroll', () => {
-        const scrollY = window.pageYOffset;
-
-        parallaxElements.forEach(el => {
-            const speed = parseFloat(el.dataset.parallax) || 0.5;
-            const offset = scrollY * speed;
-            el.style.transform = `translateY(${offset}px)`;
-        });
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollY = window.pageYOffset;
+                parallaxElements.forEach(el => {
+                    const speed = parseFloat(el.dataset.parallax) || 0.5;
+                    const offset = scrollY * speed;
+                    el.style.transform = `translateY(${offset}px)`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
     }, { passive: true });
 }
 

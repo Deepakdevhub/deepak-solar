@@ -59,11 +59,12 @@
     width: 150%;
     height: 60%;
     background: radial-gradient(ellipse at center,
-            rgba(251, 191, 36, 0.4) 0%,
+            rgba(251, 191, 36, 0.35) 0%,
             rgba(251, 191, 36, 0.1) 40%,
             transparent 70%);
-    filter: blur(60px);
+    filter: blur(20px);
     z-index: -1;
+    contain: strict;
 }
 
 .hero-content {
